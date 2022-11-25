@@ -13,10 +13,10 @@ module "linuxservers" {
   
   default_user_name = "toto"
   nombre = 2 
-  source_image = ["OpenLogic","CentOS","7.5","latest"]
+  #source_image = ["OpenLogic","CentOS","7.5","latest"]
 
   }
-
+/*
  resource "azurerm_sql_server" "example" {
   name                         = var.db_name
   resource_group_name          = var.resource_group_name
@@ -28,8 +28,21 @@ module "linuxservers" {
    environment = "production"
   }
 } 
-/*
+
+resource "null_resource" "inventory_creat" {
 provisioner "local-exec" { 
-  command = "echo ${aws_instance.os1.public_ip} ansible_user=ec2-user>> inventory"
+  command = "echo ${module.linuxservers[*].ip_public_vm} ansible_user=${module.linuxservers[*].default_user}>> inventory"
 }
+}
+
 */
+
+resource "local_file" "inventory" {
+  filename = "inventory"
+ content = <<EOF
+[web]
+${module.linuxservers.ip_public_vm[0]}
+[db]
+${module.linuxservers.ip_public_vm[1]}
+EOF
+} 

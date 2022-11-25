@@ -1,0 +1,6 @@
+---
+mysql_user: "admin"
+mysql_password: "secret"
+mysql_dbname: "blog"
+db_host:  "{{ groups['db'] }}"
+webserver_host: "{{ groups['web'] }}"
