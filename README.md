@@ -1,7 +1,8 @@
 # Déploiement d'Infrastructure sur Azure avec Terraform et de Serveur Apache avec Ansible
 
 Ce projet automatise le déploiement d'une infrastructure sur le cloud Azure en utilisant Terraform, puis le déploiement d'un serveur Apache sur cette infrastructure à l'aide de Ansible. Il vise à provisionner des machines virtuelles (VMs) et à y installer Apache pour l'hébergement de sites web ou d'applications.
-Architecture du Projet
+
+# Architecture du Projet
 
 Le projet se compose de deux parties principales :
 
