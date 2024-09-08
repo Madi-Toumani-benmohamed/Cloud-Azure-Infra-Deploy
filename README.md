@@ -1,10 +1,24 @@
-# Déploiement sur des machines distantes avec Terraform et Ansible
+# Déploiement d'Infrastructure sur Azure avec Terraform et de Serveur Apache avec Ansible
 
-Ce projet utilise un module Terraform pour déployer des ressources sur des machines distantes et utilise ensuite Ansible pour configurer ces machines. Il permet une automatisation complète du processus de déploiement et de configuration des infrastructures sur des machines distantes.
+Ce projet automatise le déploiement d'une infrastructure sur le cloud Azure en utilisant Terraform, puis le déploiement d'un serveur Apache sur cette infrastructure à l'aide de Ansible. Il vise à provisionner des machines virtuelles (VMs) et à y installer Apache pour l'hébergement de sites web ou d'applications.
+Architecture du Projet
+
+Le projet se compose de deux parties principales :
+
+    Terraform : Utilisé pour créer l'infrastructure sur Azure (réseau, sous-réseaux, machines virtuelles, groupes de sécurité, etc.).
+    Ansible : Utilisé pour configurer les VMs déployées avec Terraform et installer/configurer Apache.
+
 Prérequis
 
-Avant de commencer, assurez-vous d'avoir les éléments suivants :
+    Compte Azure :
+        Avoir un compte Azure valide et un abonnement.
+        Installer et configurer l'outil en ligne de commande Azure CLI.
 
-    Terraform installé localement. Vous pouvez trouver des instructions d'installation sur le site officiel de Terraform.
-    Ansible installé localement. Vous pouvez trouver des instructions d'installation sur le site officiel d'Ansible.
-    Un compte SSH valide sur les machines distantes avec les informations d'identification nécessaires.
+    Terraform :
+        Installer Terraform sur votre machine locale.
+
+    Ansible :
+        Installer Ansible sur votre machine locale.
+
+    Clé SSH :
+        Générer une clé SSH pour l'accès aux VMs Azure depuis Ansible.
